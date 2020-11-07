@@ -21,12 +21,12 @@ Route::get('/', function () {
 //closure
 Route::get('/profile', function () {
     return "ini adalah profil siswa";
-})->name('profilesiswa');
+})->name('profilsiswa');
 
 
 //route name
 Route::get('/apaini', function () {
-    return route('profilesiswa');
+    return route('profilsiswa');
 });
 
 

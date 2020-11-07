@@ -14,7 +14,7 @@ class testcontrollerlagi extends Controller
     public function index()
     {
         //
-        return "ini index";
+        return "ini bagian index";
     }
 
     /**

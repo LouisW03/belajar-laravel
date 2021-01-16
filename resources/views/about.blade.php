@@ -1,8 +1,8 @@
 @extends('master')
 
-@section('title','Home')  
+@section('title','About')  
 
 
 @section('content')
-    Tampilan Home
+    Tampilan About
 @endsection

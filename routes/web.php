@@ -2,43 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+// Home
+Route::get('/', function() {
+	return view('home');
 });
 
-
-//closure
-Route::get('/profile', function () {
-    return "ini adalah profil siswa";
-})->name('profilsiswa');
-
-
-//route name
-Route::get('/apaini', function () {
-    return route('profilsiswa');
+// About
+Route::get('/about', function() {
+	return view('about');
 });
 
+// Data
+Route::resource('/datasiswa', 'siswaController');
 
-//parameter
-Route::get('/profile/{id}', function ($id) {
-    return $id;
-});
-
-
-//controller
-Route::get('/cobacontroller', 'TestController@show');
-
-
-//resource
-Route::resource('resource', 'TestControllerLagi');
+//edit update dan delete data
+Route::get('/data/{id}/edit', 'SiswaController@edit')->name('editData');
+Route::post('/data/{id}/update', 'SiswaController@update')->name('updateData');
+Route::get('/data/{id}/delete', 'SiswaController@destroy')->name('deleteData');
